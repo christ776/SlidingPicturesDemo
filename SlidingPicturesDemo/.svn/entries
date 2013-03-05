@@ -1,0 +1,154 @@
+10
+
+dir
+0
+svn://190.210.162.72/fashiny/SlidingPicturesDemo/SlidingPicturesDemo
+svn://190.210.162.72
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+b7bfce30-a97d-4f8f-8e47-cf996e98f725
+
+main.m
+file
+
+
+
+add
+
+SceneManager.m
+file
+
+
+
+add
+
+Tile.h
+file
+
+
+
+add
+
+Box.m
+file
+
+
+
+add
+
+PlayLayer.h
+file
+
+
+
+add
+
+Tile.m
+file
+
+
+
+add
+
+libs
+dir
+
+
+
+add
+
+PlayLayer.m
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+Constants.h
+file
+
+
+
+add
+
+Prefix.pch
+file
+
+
+
+add
+
+SlideTutorialAppDelegate.h
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+Resources
+dir
+
+
+
+add
+
+SlideTutorialAppDelegate.m
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+Box.h
+file
+
+
+
+add
+
+SceneManager.h
+file
+
+
+
+add
+
