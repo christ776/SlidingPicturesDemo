@@ -10,7 +10,7 @@
 
 #import "Box.h"
 
-@interface PlayLayer : CCLayer
+@interface PlayLayer : CCLayerColor
 {	
 	BOOL isMoving;
 	

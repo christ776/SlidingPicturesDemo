@@ -142,6 +142,7 @@
 		313F7A2916E3D46D0011273D /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 313F7A2316E3D46D0011273D /* 3.png */; };
 		313F7A2A16E3D46D0011273D /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 313F7A2416E3D46D0011273D /* 4.png */; };
 		313F7A2B16E3D46D0011273D /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 313F7A2516E3D46D0011273D /* 6.png */; };
+		3179957616E6D4EC00D772E8 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3179957516E6D4EC00D772E8 /* GameOverLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -419,6 +420,8 @@
 		313F7A2316E3D46D0011273D /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		313F7A2416E3D46D0011273D /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		313F7A2516E3D46D0011273D /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		3179957416E6D4EC00D772E8 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverLayer.h; sourceTree = "<group>"; };
+		3179957516E6D4EC00D772E8 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +491,8 @@
 				313F7A0B16E3CB630011273D /* PlayLayer.m */,
 				313F7A0C16E3CB630011273D /* SceneManager.h */,
 				313F7A0D16E3CB630011273D /* SceneManager.m */,
+				3179957416E6D4EC00D772E8 /* GameOverLayer.h */,
+				3179957516E6D4EC00D772E8 /* GameOverLayer.m */,
 				313F7A1516E3CBFE0011273D /* Constants.h */,
 				313F787516E3CB1C0011273D /* Resources */,
 				313F788F16E3CB1C0011273D /* libs */,
@@ -1051,6 +1056,7 @@
 				313F7A1016E3CB630011273D /* PlayLayer.m in Sources */,
 				313F7A1116E3CB630011273D /* SceneManager.m in Sources */,
 				313F7A1416E3CB9A0011273D /* SlideTutorialAppDelegate.m in Sources */,
+				3179957616E6D4EC00D772E8 /* GameOverLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

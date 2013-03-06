@@ -7,10 +7,14 @@
 //
 
 #import "PlayLayer.h"
+#import "GameOverLayer.h"
+
+static const int kTimeUntilGameOver = 15;
 
 @interface PlayLayer ()
 
 @property (nonatomic,retain) CCLabelTTF *label;
+@property (nonatomic,assign) int remainingTime;
 
 @end
 
@@ -20,6 +24,7 @@
 @synthesize selectedTile  = _selectedTile;
 @synthesize firstOne = _firstOne;
 @synthesize label = _label;
+@synthesize remainingTime;
 
 -(id) init{
 	self = [super init];
@@ -28,6 +33,17 @@
 	self.box = [[Box alloc] initWithSize:CGSizeMake(kBoxWidth,kBoxHeight) imgValue:value];
 	self.box.layer = self;
 	self.box.lock = YES;
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    self.label = [CCLabelTTF labelWithString:@"0"dimensions:CGSizeMake(460, 300) hAlignment:UITextAlignmentRight
+                                    fontName:@"Verdana-Bold" fontSize:18.0];
+    self.label.color = ccBLACK;
+    int margin = 10;
+    self.label.position = ccp(winSize.width - (self.label.contentSize.width/2)
+                              - margin, self.label.contentSize.height/2 + margin);
+    
+    [self.label setString:[NSString stringWithFormat:@"%d", remainingTime]];
+    [self addChild:self.label];
 	
 	[self.box check];
 	
@@ -37,6 +53,8 @@
                                    selector:@selector(shuffleTiles)
                                    userInfo:nil
                                     repeats:NO];
+    
+    remainingTime = kTimeUntilGameOver;
 
     [self schedule: @selector(countdownTimerToGameOver:) interval:1.0f];
     
@@ -46,14 +64,24 @@
 
 - (void) countdownTimerToGameOver: (ccTime) dt
 {
+    [self.label setString:[NSString stringWithFormat:@"%d", remainingTime]];
+    remainingTime--;
+    if (remainingTime < 0) { // Go to Game Over scene
+        [self unschedule:@selector(countdownTimerToGameOver:)];
+        [self goToGameOverScene];
+    }
+}
+
+-(void) goToGameOverScene
+{
+    CCScene *gameOverScene = [GameOverLayer sceneWithWon:[self.box checkSolution]];
+    [[CCDirector sharedDirector] replaceScene:gameOverScene];
     
 }
 
 -(void) shuffleTiles
 {
     [self.box shuffleTiles];
-//    [myTimer invalidate];
-//    myTimer = nil;
 }
 
 
@@ -67,7 +95,7 @@
 		return;
 	}
 	
-	int x = (location.x - kStartX) / (kTileSize);
+	int x = (location.x - x_Offset) / (kTileSize);
 	int y = (location.y - kStartY) / (kTileSize);
 	
 	if (self.selectedTile && self.selectedTile.x == x && self.selectedTile.y == y) {
@@ -104,7 +132,7 @@
     CGPoint location = [touch locationInView: touch.view];
 	location = [[CCDirector sharedDirector] convertToGL: location];
     
-    int xCoord = (location.x - kStartX) / (kTileSize);
+    int xCoord = (location.x - x_Offset) / (kTileSize);
 	int yCoord = (location.y - kStartY) / (kTileSize);
 	
 	if (self.selectedTile && self.selectedTile.x == xCoord && self.selectedTile.y == yCoord) {
@@ -132,7 +160,7 @@
     CGPoint location = [touch locationInView: touch.view];
 	location = [[CCDirector sharedDirector] convertToGL: location];
     
-    int xCoord = (location.x - kStartX) / (kTileSize);
+    int xCoord = (location.x - x_Offset) / (kTileSize);
 	int yCoord = (location.y - kStartY) / (kTileSize);
 	
 	if (self.selectedTile && self.selectedTile.x == xCoord && self.selectedTile.y == yCoord) {

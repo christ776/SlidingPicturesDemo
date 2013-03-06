@@ -35,7 +35,8 @@
 	[tempSprite release];
 }
 
--(CGPoint) pixPosition{
-	return ccp(kStartX + x * kTileSize +kTileSize/2.0f,kStartY + y * kTileSize +kTileSize/2.0f);
+-(CGPoint) pixPosition
+{
+	return ccp(x_Offset + x * kTileSize +kTileSize/2.0f,kStartY + y * kTileSize +kTileSize/2.0f);
 }
 @end

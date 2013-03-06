@@ -13,6 +13,7 @@
 @synthesize size;
 @synthesize lock;
 
+
 -(id) initWithSize: (CGSize) aSize imgValue: (int) aImgValue{
 	self = [super init];
 	imgValue = aImgValue;
@@ -21,6 +22,9 @@
 	content = [NSMutableArray arrayWithCapacity: size.height];
 	
 	readyToRemoveTiles = [NSMutableSet setWithCapacity:50];
+//    
+//    CGSize winSize = [[CCDirector sharedDirector] winSize];
+//     x_Offset = (winSize.width - kTileSize*kBoxHeight)/2;
 	
 	for (int y=0; y<size.height; y++) {
 		
@@ -117,7 +121,9 @@
 			CCSpriteFrame * img = [imgFrames objectAtIndex:0];
 			CCSprite *sprite = [CCSprite spriteWithSpriteFrame:img];
 			[imgFrames removeObjectIdenticalTo:img];
-			sprite.position = ccp(kStartX + x * kTileSize + kTileSize/2, kStartY + (kBoxHeight + i) * kTileSize + kTileSize/2 - kTileSize * extension);
+     
+			sprite.position = ccp(x_Offset + x * kTileSize + kTileSize/2,
+                                  kStartY + (kBoxHeight + i) * kTileSize + kTileSize/2 - kTileSize * extension);
 			[layer addChild: sprite];
 
             destTile.value = (kBoxHeight * destTile.x) + destTile.y;

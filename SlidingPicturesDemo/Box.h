@@ -30,7 +30,7 @@
 -(Tile *) objectAtX: (int) posX Y: (int) posY;
 -(BOOL) check;
 -(void) shuffleTiles;
-
+-(BOOL) checkSolution;
 -(void) changeWithTileA: (Tile *) a TileB: (Tile *) b;
 
 @end

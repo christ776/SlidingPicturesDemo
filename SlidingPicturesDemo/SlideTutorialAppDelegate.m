@@ -73,7 +73,7 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
     
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-	[director_ pushScene: [PlayLayer node]];
+	//[director_ pushScene: [PlayLayer node]];
     
 	
 	// Create a Navigation Controller with the Director
@@ -86,6 +86,8 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
+    
+    [director_ pushScene: [PlayLayer node]];
 	
 	return YES;
 }
@@ -93,7 +95,7 @@
 // Supported orientations: Landscape. Customize it for your own needs
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+	return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 
