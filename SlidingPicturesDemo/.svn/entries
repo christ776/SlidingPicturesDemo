@@ -54,6 +54,13 @@ file
 
 add
 
+GameOverLayer.h
+file
+
+
+
+add
+
 PlayLayer.h
 file
 
@@ -88,6 +95,13 @@ add
 
 has-props
 has-prop-mods
+
+GameOverLayer.m
+file
+
+
+
+add
 
 Constants.h
 file
@@ -138,14 +152,14 @@ add
 has-props
 has-prop-mods
 
-Box.h
+SceneManager.h
 file
 
 
 
 add
 
-SceneManager.h
+Box.h
 file
 
 
